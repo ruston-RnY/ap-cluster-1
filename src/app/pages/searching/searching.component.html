@@ -1,1 +1,17 @@
-<p>searching works!</p>
+<section class="mt-4">
+  <h4>Binary Search Technique</h4>
+  <div class="mt-4 flex">
+    <b>Array :</b> &nbsp;
+    <div *ngFor="let arr of arrSearch; let last = last">
+      {{ arr }} <span *ngIf="!last">,</span>
+    </div>
+  </div>
+  <h4>Target 1 & 5</h4>
+
+  <button (click)="onSearch()" class="mt-4">Search</button>
+
+  <div class="mt-4 flex" *ngIf="result1 != null">
+    <b>Result :</b> &nbsp;
+    <div>{{ result1 }}, {{ result2 }}</div>
+  </div>
+</section>
