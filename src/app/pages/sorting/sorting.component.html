@@ -1,0 +1,24 @@
+<section class="mt-4">
+  <div class="flex">
+    <h4>Bubble Sort Technique</h4>
+    <button (click)="addNumber()" class="btn-add ml-2">Add Number</button>
+  </div>
+
+  <div *ngFor="let item of arrFieldInput; let i = index" class="mt-2">
+    <input type="number" [(ngModel)]="item.value" />
+    <button (click)="deleteNumber(i)" *ngIf="i > 0" class="btn-delete ml-2">
+      Delete
+    </button>
+  </div>
+
+  <button (click)="bubbleSort()" class="mt-4">submit</button>
+
+  <ng-container *ngIf="resultBubleSort.length > 0">
+    <div class="mt-4 flex">
+      <b>Result :</b> &nbsp;
+      <div *ngFor="let arr of resultBubleSort; let last = last">
+        {{ arr }} <span *ngIf="!last">,</span>
+      </div>
+    </div>
+  </ng-container>
+</section>

@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main {
+  margin: 0 3%;
+  min-height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+
+  .main-content {
+    margin: 1rem auto;
+
+    nav {
+      display: flex;
+      border-bottom: 1px solid #170f49;
+      padding-bottom: 12px;
+      justify-content: center;
+
+      .nav-link {
+        background-color: transparent;
+        padding: 4px 20px;
+        margin: 4px;
+        border-radius: 100px;
+        font-size: 14px;
+        cursor: pointer;
+        color: #170f49;
+        font-weight: 600;
+        text-decoration: none;
+
+        &.active {
+          color: #ffff;
+          background-color: #f05a27;
+        }
+      }
+    }
+
+    h4 {
+      font-weight: 400;
+    }
+
+    .mt-4 {
+      margin-top: 16px;
+    }
+
+    .mt-2 {
+      margin-top: 4px;
+    }
+
+    .ml-2 {
+      margin-left: 4px;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    button {
+      padding: 4px 8px;
+      background-color: #212c5f;
+      color: #ffff;
+      outline: none;
+      border: 0;
+      font-size: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.btn-add {
+        background-color: #19bf22;
+      }
+
+      &.btn-delete {
+        background-color: #df1a1a;
+      }
+    }
+
+    input {
+      padding: 2px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
