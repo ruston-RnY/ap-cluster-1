@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sorting.component.scss'],
 })
 export class SortingComponent implements OnInit {
+  // setup variabel
   public arrFieldInput: any = [
     {
       value: null,
@@ -21,16 +22,19 @@ export class SortingComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // add number function
   addNumber() {
     this.arrFieldInput.push({ value: null });
   }
 
+  // delete number function
   deleteNumber(idx: number) {
     this.arrFieldInput = this.arrFieldInput.filter(
       (item: any, i: number) => i != idx
     );
   }
 
+  // buble sort technique function
   bubbleSort() {
     const arr: any = [];
     this.arrFieldInput.forEach((item: any) => {
@@ -53,6 +57,7 @@ export class SortingComponent implements OnInit {
     this.resultBubleSort = arr;
   }
 
+  // binary search technique function
   binary_Search(items: any, value: any) {
     var firstIndex = 0,
       lastIndex = items.length - 1,
@@ -70,6 +75,7 @@ export class SortingComponent implements OnInit {
     return items[middleIndex] != value ? -1 : middleIndex;
   }
 
+  // on click search button function
   search() {
     this.isSearch = true;
     this.searchResult = this.binary_Search(
