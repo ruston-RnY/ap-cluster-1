@@ -13,6 +13,9 @@ export class SortingComponent implements OnInit {
   ];
 
   public resultBubleSort: any = [];
+  public searchValue!: number;
+  public searchResult!: number;
+  public isSearch: boolean = false;
 
   constructor() {}
 
@@ -48,5 +51,30 @@ export class SortingComponent implements OnInit {
     } while (swapp);
 
     this.resultBubleSort = arr;
+  }
+
+  binary_Search(items: any, value: any) {
+    var firstIndex = 0,
+      lastIndex = items.length - 1,
+      middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+
+    while (items[middleIndex] != value && firstIndex < lastIndex) {
+      if (value < items[middleIndex]) {
+        lastIndex = middleIndex - 1;
+      } else if (value > items[middleIndex]) {
+        firstIndex = middleIndex + 1;
+      }
+      middleIndex = Math.floor((lastIndex + firstIndex) / 2);
+    }
+
+    return items[middleIndex] != value ? -1 : middleIndex;
+  }
+
+  search() {
+    this.isSearch = true;
+    this.searchResult = this.binary_Search(
+      this.resultBubleSort,
+      this.searchValue
+    );
   }
 }

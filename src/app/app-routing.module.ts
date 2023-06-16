@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SearchingComponent } from './pages/searching/searching.component';
 import { SortingComponent } from './pages/sorting/sorting.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sorting',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
-    path: 'sorting',
+    path: 'home',
     component: SortingComponent,
-  },
-  {
-    path: 'searching',
-    component: SearchingComponent,
   },
 ];
 

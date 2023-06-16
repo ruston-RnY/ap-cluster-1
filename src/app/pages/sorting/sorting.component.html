@@ -1,24 +1,46 @@
-<section class="mt-4">
-  <div class="flex">
-    <h4>Bubble Sort Technique</h4>
-    <button (click)="addNumber()" class="btn-add ml-2">Add Number</button>
-  </div>
-
-  <div *ngFor="let item of arrFieldInput; let i = index" class="mt-2">
-    <input type="number" [(ngModel)]="item.value" />
-    <button (click)="deleteNumber(i)" *ngIf="i > 0" class="btn-delete ml-2">
-      Delete
-    </button>
-  </div>
-
-  <button (click)="bubbleSort()" class="mt-4">submit</button>
-
-  <ng-container *ngIf="resultBubleSort.length > 0">
-    <div class="mt-4 flex">
-      <b>Result :</b> &nbsp;
-      <div *ngFor="let arr of resultBubleSort; let last = last">
-        {{ arr }} <span *ngIf="!last">,</span>
-      </div>
+<section class="mt-4 flex justify-center">
+  <div class="">
+    <div class="flex mb-4">
+      <h4>Bubble Sort Technique</h4>
+      <button (click)="addNumber()" class="btn-add ml-2">Add Number</button>
     </div>
-  </ng-container>
+
+    <div *ngFor="let item of arrFieldInput; let i = index" class="mt-2">
+      <input type="number" [(ngModel)]="item.value" />
+      <button (click)="deleteNumber(i)" *ngIf="i > 0" class="btn-delete ml-2">
+        Delete
+      </button>
+    </div>
+
+    <button (click)="bubbleSort()" class="mt-4">Sorting</button>
+
+    <ng-container *ngIf="resultBubleSort.length > 0">
+      <div class="mt-4 flex">
+        <b>Result :</b> &nbsp;
+        <div *ngFor="let arr of resultBubleSort; let last = last">
+          {{ arr }} <span *ngIf="!last">,</span>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <label>Input your number</label>
+        <input type="number" class="ml-2" [(ngModel)]="searchValue" />
+
+        <div>
+          <button (click)="search()" class="mt-4">Searching</button>
+        </div>
+
+        <div class="mt-4 flex" *ngIf="isSearch">
+          <b>Result :</b> &nbsp;
+          <div *ngIf="searchResult == -1" class="text-red">
+            Number is not found...!
+          </div>
+          <div *ngIf="searchResult != -1">
+            The number you are looking for is in the order to
+            <b class="found">{{ searchResult + 1 }}</b>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </section>
